@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <curl/curl.h>
 
 using namespace std;
 
@@ -19,6 +20,10 @@ Share::Share(std::string Code)
     Set_Details(Code);
 }
 
+std::string Share::Get_Code()
+{
+    return Code;
+}
 std::string Share::Get_Company()
 {
     return Company;
@@ -56,3 +61,6 @@ void Share::Set_Details(string Code)
     }
     CompanyList.close();
 }
+
+
+Share::~Share(){}
